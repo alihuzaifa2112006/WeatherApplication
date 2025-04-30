@@ -1,0 +1,179 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* Changed from overflow: hidden to allow scrolling on small devices */
+  overflow-x: hidden;
+}
+
+.aboutPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contentBox {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 80vh;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgb(255, 170, 0);
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: #edf2f7;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.iconLink {
+  transition: transform 0.3s ease;
+}
+
+.iconLink:hover {
+  transform: scale(1.1);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  fill: currentColor;
+  color: white;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.exploreBtn {
+  background-color: rgb(255, 170, 0);
+  color: rgb(32, 31, 31);
+  font-weight: bold;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-size: 1.125rem;
+  transition: background-color 0.3s ease;
+  border: none;
+  z-index: 10;
+  position: relative;
+}
+
+.exploreBtn:hover {
+  background-color: rgba(255, 170, 0, 0.76);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .contentBox {
+    min-height: 85vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
+  
+  .icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .exploreBtn {
+    padding: 10px 28px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .aboutPage {
+    padding: 15px;
+    align-items: flex-start;
+  }
+  
+  .contentBox {
+    min-height: auto;
+    padding: 30px 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+  
+  .socialIcons {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+  
+  .exploreBtn {
+    padding: 8px 24px;
+    font-size: 0.95rem;
+  }
+  
+  .socialIcons {
+    gap: 12px;
+  }
+}

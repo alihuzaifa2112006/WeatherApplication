@@ -1,0 +1,138 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 100%;
+height: 100%;
+    display: flex;
+    justify-content: center;
+   
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .AppBox {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    color: rgb(31, 30, 30);
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+  }
+  
+  .AppBox h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(1.25rem, 5vw, 1.8rem);
+    font-weight: bold;
+    color: rgb(72, 69, 69);
+    margin-bottom: 0.75rem;
+  }
+  
+  .AppBox p {
+    font-size: clamp(0.75rem, 3vw, 1rem);
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(110, 106, 106);
+    margin-top: 0.75rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  .Submisiion {
+    border: 1px solid rgb(95, 92, 92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.25rem;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .AppBox input {
+    width: 100%;
+    height: 40px;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-right: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(75, 71, 71);
+    outline: none;
+  }
+  
+  .AppBox input:hover {
+    background-color: rgb(240, 238, 238);
+  }
+  
+  .AppBox a {
+    background-color: rgb(255, 170, 0);
+    color: rgb(59, 58, 58);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.5rem 1rem;
+    height: 40px;
+    font-size: clamp(0.8rem, 3vw, 1.1rem);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  
+  .AppBox a:hover {
+    background-color: rgba(255, 170, 0, 0.816);
+  }
+  
+  .boxes {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .AppBox {
+      padding: 1.5rem;
+    }
+    .boxes {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 0.5rem;
+    }
+    .Submisiion {
+      flex-direction: column;
+      border: none;
+    }
+    .AppBox input {
+      border: 1px solid rgb(95, 92, 92);
+      margin-bottom: 0.5rem;
+    }
+    .AppBox a {
+      width: 100%;
+      border: 1px solid rgb(95, 92, 92);
+    }
+  }
+  
+  @media (max-width: 280px) {
+    .AppBox {
+      padding: 0.75rem;
+    }
+    .AppBox h2 {
+      font-size: 1.1rem;
+    }
+  }
