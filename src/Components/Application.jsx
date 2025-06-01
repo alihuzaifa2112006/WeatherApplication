@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import './Application.css';
 import axios from 'axios';
 
 const Application = () => {
-  const [city, setcity] = useState(
-    ''
-  )
-  const [weather, setweather] = useState({
+  const [city, setCity] = useState('');
+  const [weather, setWeather] = useState({
     current: {
       temp_c: 0,
       humidity: 0,
@@ -16,35 +14,44 @@ const Application = () => {
       name: "City Name"
     }
   });
- const [error , seterror] = useState('')
+  const [error, setError] = useState('');
 
- const getWeather = async () => {
-  if(!city) return;
-  try{
-    const response = await axios.get(`https://api.weatherapi.com/v1/current.json?key=683a627da1e44a86bf542145251501&q=${city}`)
+  const getWeather = async () => {
+    if (!city) return;
 
+    try {
+      const response = await axios.get(
+        `https://api.weatherapi.com/v1/current.json?key=683a627da1e44a86bf542145251501&q=${city}`
+      );
+      setWeather(response.data);
+      setError('');
+    } catch (err) {
+      setError('City is not found');
+    }
+  };
 
-    setweather(response.data)
-    seterror('');
-  } catch (err){
-    seterror("City is not found")
-    setweather(null)
-  } }
-  
   return (
-    <div className='container'>
-     <div className="AppBox ">
+    <div className="container">
+      <div className="AppBox">
         <h2>WeatherX</h2>
         <p>Enter Your City Name To Get Updated With Your Area Weather.</p>
-        <div className="Submisiion">
-        <input onChange={(e) => setcity(e.target.value)} type="text" placeholder='Enter Your City Name'/>
-        <a  onClick={getWeather} href="#">Enter</a> 
-        {error && alert("City Is Not Found")}
-        </div>
-       
-       
 
-        {weather && (
+        <div className="Submisiion">
+          <input
+            type="text"
+            placeholder="Enter Your City Name"
+            onChange={(e) => {
+              setCity(e.target.value);
+              setError('');
+            }}
+            value={city}
+          />
+          <a onClick={getWeather} href="#">Enter</a>
+
+          {error && alert("City Not FOund")}
+        </div>
+
+        {weather && !error && (
           <>
             <img
               src={`http:${weather.current.condition.icon}`}
@@ -62,9 +69,9 @@ const Application = () => {
             </div>
           </>
         )}
-     </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Application
+export default Application;
